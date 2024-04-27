@@ -38,7 +38,8 @@ def delete_state(state_id):
 @app_views.route('/states', methods=['POST'], strict_slashes=False)
 def create_state():
     try:
-        data = json.loads(request.data)
+        data = request.get_json()
+#json.loads(request.data)
     except Exception as e:
         print("Exception during JSON parsing:", e)
         abort(400, description="Invalid JSON")
@@ -60,7 +61,8 @@ def update_state(state_id):
     if not state:
         abort(404)
     try:
-        data = json.loads(request.data)
+        data = request.get_json()
+#json.loads(request.data)
         print("Received JSON data:", data)
     except Exception as e:
         print("Exception during JSON parsing:", e)

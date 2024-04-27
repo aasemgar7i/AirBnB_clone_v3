@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""state file"""
 from flask import Flask
 from flask import jsonify
 from flask import request

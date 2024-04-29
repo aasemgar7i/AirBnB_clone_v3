@@ -2,7 +2,7 @@
 """AirBNB v3 Api"""
 import os
 from flask import Flask
-fron flask_cors import CORS
+from flask_cors import CORS
 from flask import jsonify
 from flask import make_response
 from models import storage

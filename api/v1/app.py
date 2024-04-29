@@ -2,6 +2,7 @@
 """AirBNB v3 Api"""
 import os
 from flask import Flask
+fron flask_cors import CORS
 from flask import jsonify
 from flask import make_response
 from models import storage
@@ -10,6 +11,7 @@ from api.v1.views import app_views
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
+cors = CORS(app, resources={r"/api/*": {"origins": "http://0.0.0.0"}})
 
 
 @app.errorhandler(404)
